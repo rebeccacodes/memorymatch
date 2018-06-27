@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Harry Potter Memory Match</title>
+
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+    <script src="main.js"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid col-md-12">
+        <header>
+            <h1>Harry Potter Memory Match</h1>
+            <ul>
+                <li>
+                    <a href="#settings">Settings</a>
+                </li>
+                <li>
+                    <a href="about.html">About the Developer</a>
+                </li>
+            </ul>
+        </header>
+
+        <div class="main-content">
+
+            <div class="sidebar">
+                <div class="games-played">
+                    <h4>STATS</h4>
+                    <p class="label" value="">GAMES PLAYED
+                        <span value=""></span>
+                    </p>
+                </div>
+                <div class="attempts">
+                    <p class="label">NUMBER OF TRIES
+                        <span value=""></span>
+                    </p>
+                </div>
+                <div class="accuracy">
+                    <p class="label">ACCURACY
+                        <span value=""></span>
+                    </p>
+                </div>
+                <button class="btn btn-danger reset">RESET</button>
+                <div class="game-info">
+                    <h4>GAME INFO</h4>
+                </div>
+            </div>
+            <div class="gameboard" id="game-area">
+
+                <div class="row">
+                    <div class="game-card">
+                        <div class="back">
+                            <img src="images/card-back.png" alt="">
+                        </div>
+                        <div class="front">
+                            <img src="images/youngHarry.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="back">
+                            <img src="images/card-back.png" alt="">
+                        </div>
+                        <div class="front">
+                            <img src="images/youngHarry.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="back">
+                            <img src="images/card-back.png" alt="">
+                        </div>
+                        <div class="front">
+                            <img src="images/voldemort.png" alt="">
+                        </div>
+                    </div>
+                    <div class="game-card">
+                        <div class="back">
+                            <img src="images/card-back.png" alt="">
+                        </div>
+                        <div class="front">
+                            <img src="images/voldemort.png" alt="">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <footer>
+
+            </footer>
+
+
+
+        </div>
+</body>
+
+</html>
