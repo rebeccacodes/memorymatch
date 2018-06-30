@@ -12,12 +12,14 @@
     <link rel="stylesheet" href="style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
+    <script src="sparkle.js"></script>
     <script src="main.js"></script>
 
 </head>
 
 <body>
     <div class="container-fluid col-md-12">
+        <div class='a'></div>
         <header>
             <h1>Harry Potter Memory Match</h1>
             <ul>
@@ -33,74 +35,84 @@
         <div class="main-content">
 
             <div class="sidebar">
+
                 <div class="games-played">
                     <h4>STATS</h4>
-                    <p class="label" value="">GAMES PLAYED
-                        <span value=""></span>
+                    <p class="label">GAMES PLAYED:
+                        <span class='value'></span>
                     </p>
                 </div>
                 <div class="attempts">
-                    <p class="label">NUMBER OF TRIES
-                        <span value=""></span>
+                    <p class="label ">NUMBER OF TRIES:
+                        <span class='value'></span>
                     </p>
                 </div>
                 <div class="accuracy">
-                    <p class="label">ACCURACY
-                        <span value=""></span>
+                    <p class="label">ACCURACY:
+                        <span class='value'></span>
                     </p>
                 </div>
-                <button class="btn btn-danger reset">RESET</button>
+                <button type="button" class="btn" id="reset-btn">RESET</button>
                 <div class="game-info">
                     <h4>GAME INFO</h4>
+                    <p class="label">LEVEL
+                        <span class='value'>ONE</span>
+                    </p>
                 </div>
             </div>
-            <div class="gameboard" id="game-area">
+            <div class="gameboard custom" id="game-area">
 
-                <div class="row">
-                    <div class="game-card">
-                        <div class="back">
-                            <img src="images/card-back.png" alt="">
-                        </div>
-                        <div class="front">
-                            <img src="images/youngHarry.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <div class="back">
-                            <img src="images/card-back.png" alt="">
-                        </div>
-                        <div class="front">
-                            <img src="images/youngHarry.jpg" alt="">
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <div class="back">
-                            <img src="images/card-back.png" alt="">
-                        </div>
-                        <div class="front">
-                            <img src="images/voldemort.png" alt="">
-                        </div>
-                    </div>
-                    <div class="game-card">
-                        <div class="back">
-                            <img src="images/card-back.png" alt="">
-                        </div>
-                        <div class="front">
-                            <img src="images/voldemort.png" alt="">
-                        </div>
-                    </div>
+                <div class="card_container">
 
                 </div>
 
             </div>
 
-            <footer>
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            <h1 class="modal-title">Congratulations</h1>
+                        </div>
+                        <div class="modal-body">
 
-            </footer>
+                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/LzqdrHq-orc?rel=0&amp;controls=0&amp;showinfo=0;autoplay=1&amp;"
+                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
+                        </div>
+                        <!-- <div class="modal-footer">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="openingModal" role="dialog">
+                <div class="modal-dialog">
+                    <!-- Modal content-->
+                    <div class="modal-content">
+                        <div class="modal-header">
+
+                            <h1 class="modal-title">Welcome</h1>
+                        </div>
+                        <div class="modal-body">
+                            <div>
+                                <img src="images/sortingGIF.gif" alt="" height="250px">
+                            </div>
+                            <div>
+                                <h2 class="modalFont">hmmm, let's choose your house</h2>
+                                <button type="button" id="chooseHouse" class="btn btn-danger">Pick House</button>
+                                <h1 class="house"></h1>
+                            </div>
 
 
 
-        </div>
+                        </div>
+                        <div class="modal-footer">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 </body>
 
 </html>
