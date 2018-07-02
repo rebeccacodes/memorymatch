@@ -12,14 +12,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
-    <script src="sparkle.js"></script>
+    <!-- <script src="sparkle.js"></script> -->
     <script src="main.js"></script>
 
 </head>
 
 <body>
     <div class="container-fluid col-md-12">
-        <div class='a'></div>
+        <div class='a'>
+        </div>
         <header>
             <h1>Harry Potter Memory Match</h1>
             <ul>
@@ -28,6 +29,11 @@
                 </li>
                 <li>
                     <a href="about.html">About the Developer</a>
+                </li>
+                <li>
+                    <button type="button" class="soundOn" class="btn soundOn">
+                        <span class=" glyphicon glyphicon-volume-up pull-right"></span>
+                    </button>
                 </li>
             </ul>
         </header>
@@ -59,6 +65,9 @@
                         <span class='value'>ONE</span>
                     </p>
                 </div>
+                <div class="stone">
+                    <img class="stone-img" src="images/stone-glow.png" alt="">
+                </div>
             </div>
             <div class="gameboard custom" id="game-area">
 
@@ -67,52 +76,41 @@
                 </div>
 
             </div>
+            <div class="right-bar">
+                <img class="side" src="images/harry.png" alt="">
 
-            <div class="modal fade" id="myModal" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                            <h1 class="modal-title">Congratulations</h1>
-                        </div>
-                        <div class="modal-body">
+            </div>
 
-                            <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/LzqdrHq-orc?rel=0&amp;controls=0&amp;showinfo=0;autoplay=1&amp;"
-                                frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe> -->
-                        </div>
-                        <!-- <div class="modal-footer">
-                        </div> -->
+            <div class="container-fluid col-md-12 openModal modalShadow showModal">
+                <div class="mainModal">
+                    <div class="modalHeader">
+                        <button type="button" class="btn soundOn">
+                            <span class=" glyphicon glyphicon-volume-up pull-right"></span>
+                        </button>
+                    </div>
+                    <h1 class="welcome">Welcome</h1>
+                    <h2 class="modalFont modalH2">hmmm, let's choose your house</h2>
+                    <div>
+                        <img class="hat" src="images/sortingGIF.gif" alt="">
+                    </div>
+                    <button type="button" id="chooseHouse" class="btn">Pick House</button>
+                    <h1 class="house"></h1>
+
+                </div>
+            </div>
+
+            <div class="container-fluid col-md-12 endModal modalShadow">
+                <div class="winModal">
+                    <div class="modalHeader">
+                        <h1 class="welcome">Congratulations</h1>
+                    </div>
+                    <div>
+                        <iframe width="650" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>
-            <div class="modal fade" id="openingModal" role="dialog">
-                <div class="modal-dialog">
-                    <!-- Modal content-->
-                    <div class="modal-content">
-                        <div class="modal-header">
-
-                            <h1 class="modal-title">Welcome</h1>
-                        </div>
-                        <div class="modal-body">
-                            <div>
-                                <img src="images/sortingGIF.gif" alt="" height="250px">
-                            </div>
-                            <div>
-                                <h2 class="modalFont">hmmm, let's choose your house</h2>
-                                <button type="button" id="chooseHouse" class="btn btn-danger">Pick House</button>
-                                <h1 class="house"></h1>
-                            </div>
 
 
-
-                        </div>
-                        <div class="modal-footer">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
 </body>
 
 </html>

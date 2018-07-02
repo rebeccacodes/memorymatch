@@ -10,14 +10,14 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: black;
-    height: 100%;
     width: 100%;
-    overflow: hidden;
+    height: 100%;
+    /* overflow: hidden; */
 }
 
 h1 {
     font-family: harryp;
-    color: #dfbe53;
+    color: rgb(223, 190, 83);
     font-size: 90px;
     text-align: center;
 }
@@ -26,7 +26,7 @@ header {
     position: relative;
 }
 
-.ravenclaw {
+.Ravenclaw {
     background-image: url("images/ravenclaw.png");
     background-size: cover;
     background-repeat: no-repeat;
@@ -35,7 +35,7 @@ header {
     padding-top: 15px;
 }
 
-.hufflepuff {
+.Hufflepuff {
     background-image: url("images/hufflepuff.png");
     background-repeat: no-repeat;
     background-position: left 60px center;
@@ -43,7 +43,7 @@ header {
     padding-top: 15px;
 }
 
-.gryffindor {
+.Gryffindor {
     background-image: url("images/gryffindor.png");
     background-repeat: no-repeat;
     background-position: left 60px center;
@@ -51,7 +51,7 @@ header {
     padding-top: 15px;
 }
 
-.slytherin {
+.Slytherin {
     background-image: url("images/slytherin.png");
     background-repeat: no-repeat;
     background-position: left 60px center;
@@ -60,7 +60,7 @@ header {
 }
 
 header ul {
-    border-bottom: 1px solid #dfbe53;
+    border-bottom: 1px solid rgb(223, 190, 83);
     list-style-type: none;
     padding: 5px 25px 0 0;
     margin-right: 15px;
@@ -78,23 +78,21 @@ header ul li a {
     text-align: center;
     padding: 5px 16px;
     text-decoration: none;
-    color: #dfbe53;
+    color: rgb(223, 190, 83);
 }
 
 li a:hover {
-    color: #500d16;
+    color: rgb(80, 13, 22);
     text-decoration: none;
 }
 
 .main-content {
-    /* border: 1px solid red; */
     padding-top: 10px;
 }
 
 .sidebar {
-    color: #dfbe53;
+    color: rgb(223, 190, 83);
     text-align: center;
-    /* border: 1px solid red; */
     display: inline-block;
     width: 12vw;
     height: 75vh;
@@ -108,7 +106,7 @@ h4 {
 
 .label {
     font-size: 18px;
-    color: #dfbe53;
+    color: rgb(223, 190, 83);
 }
 
 .games-played,
@@ -126,37 +124,34 @@ h4 {
 
 #reset-btn {
     margin-bottom: 25px;
-    background-color: #500d16;
-    border: 2px solid #dfbe53;
-    color: #dfbe53;
+    background-color: rgb(80, 13, 22);
+    border: 2px solid rgb(223, 190, 83);
+    color: rgb(223, 190, 83);
 }
 
 .gameboard {
-    /* border: 1px solid red; */
     display: inline-block;
-    width: 72vw;
+    width: 70vw;
     height: 75vh;
     margin: 0 auto;
     text-align: center;
 }
 
 .card_container {
-    /* border: 1px solid lime; */
     width: 85%;
     margin: 0 auto;
 }
 
 .game-card {
     text-align: left;
-    height: 23vh;
-    width: 17vh;
+    height: 20vh;
+    width: 8vw;
     display: inline-block;
     position: relative;
     margin: 1%;
 }
 
 .back {
-    /* border: 1px solid #dfbe53; */
     border-radius: 7%;
     position: absolute;
     height: 100%;
@@ -166,7 +161,7 @@ h4 {
 .front {
     height: 100%;
     width: 100%;
-    border: 1px solid #dfbe53;
+    border: 1px solid rgb(223, 190, 83);
     border-radius: 7%;
 }
 
@@ -174,7 +169,7 @@ h4 {
 .front img {
     height: 100%;
     width: 100%;
-    border: 1px solid #dfbe53;
+    border: 1px solid rgb(223, 190, 83);
     border-radius: 7%;
 }
 
@@ -182,59 +177,8 @@ h4 {
     display: none;
 }
 
-.modal-body {
-    font-size: 70px;
-    font-family: harryp;
-    text-align: center;
-    text-shadow: black 0px 0px 8px;
-    color: white;
-    max-height: 90vh;
-    /* background-color: black; */
-}
-
-/* .modal-body>img {
-    width: 100%;
-    height: 100%;
-} */
-
-.modal-dialog {
-    margin: 2.5vh auto;
-}
-
-.modal-content {
-    max-height: 95vh;
-}
-
-.modal-title {
-    font-family: harryp;
-    text-align: center;
-    font-size: 60px;
-    background-color: black;
-    color: white;
-    text-shadow: #dfbe53 0px 0px 8px;
-}
-
-.modal-header,
-.modal-footer {
-    /* background-color: black; */
-}
-
 .close {
     color: white;
-}
-
-.modalFont {
-    font-size: 50px;
-    color: #500d16;
-    text-shadow: #dfbe53 0px 0px 8px;
-}
-
-#chooseHouse {
-    background-color: #500d16;
-    border: 2px solid #dfbe53;
-    color: #dfbe53;
-    width: 10vw;
-    font-size: 36px;
 }
 
 .a {
@@ -242,4 +186,151 @@ h4 {
     height: 262px;
     background-image: url(images/snitchTransGif.gif);
     position: fixed;
+    z-index: 1;
+}
+
+/* non bootstrap modal */
+
+.modalShadow {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, .6);
+    display: none;
+}
+
+.mainModal {
+    height: 75%;
+    width: 75%;
+    position: fixed;
+    background-color: white;
+    background-image: url(images/hogwartsEmblem.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    color: black;
+    text-align: center;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.winModal {
+    height: 75%;
+    width: 75%;
+    position: fixed;
+    background-color: black;
+    border: 2px solid rgb(223, 190, 83);
+    color: black;
+    text-align: center;
+    display: block;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.mainModal h1 {
+    color: black;
+    text-shadow: rgb(223, 190, 83) 0px 0px 8px;
+    font-size: 100px;
+}
+
+.mainModal h2 {
+    font-family: harryp;
+    font-size: 80px;
+}
+
+.modalFont {
+    font-size: 50px;
+    color: #500d16;
+    text-shadow: rgb(223, 190, 83) 0px 0px 8px;
+}
+
+.openModal.modalShadow.showModal,
+.endModal.modalShadow.showModal {
+    display: block;
+}
+
+.modalHeader {
+    padding-top: 15px;
+    padding-right: 15px;
+    text-align: right;
+}
+
+.soundOn {
+    background-color: rgb(80, 13, 22);
+    border: 2px solid rgb(223, 190, 83);
+    color: rgb(223, 190, 83);
+    font-size: 30px;
+}
+
+.welcome,
+.modalH2 {
+    padding: 0;
+    margin: 0;
+}
+
+#chooseHouse {
+    margin-top: 25px;
+    background-color: rgb(80, 13, 22);
+    border: 2px solid rgb(223, 190, 83);
+    color: rgb(223, 190, 83);
+    width: 12vw;
+    text-align: center;
+    border-radius: 15px;
+    font-size: 36px;
+    font-family: harryp;
+}
+
+.hat {
+    height: 150px;
+}
+
+.stone {
+    padding-top: 20px;
+    padding-right: 15px;
+}
+
+.stone-img {
+    height: 150px;
+}
+
+.right-bar {
+    display: inline-block;
+    height: 100%;
+    vertical-align: bottom;
+}
+
+.side {
+    height: 250px;
+}
+
+@media only screen and (max-width: 1385px) {
+    .right-bar {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .right-bar {
+        display: none;
+    }
+    .stone {
+        display: none;
+    }
+    .Ravenclaw {
+        display: none;
+    }
+    .Hufflepuff {
+        display: none;
+    }
+    .Gryffindor {
+        display: none;
+    }
+    .Slytherin {
+        display: none;
+    }
 }
