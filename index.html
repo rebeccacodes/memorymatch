@@ -8,9 +8,9 @@
     <title>Harry Potter Memory Match</title>
 
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="http://learning-fuze.github.io/memory_match/v0.1/script.js"></script>
     <!-- <script src="sparkle.js"></script> -->
     <script src="main.js"></script>
@@ -19,57 +19,51 @@
 
 <body>
     <div class="container-fluid col-md-12">
-        <div class='a'>
+        <div class='a'></div>
+        <div class="row">
+            <header>
+                <h1 class="title">Harry Potter Memory Match</h1>
+                <ul class="btn-container">
+                    <li>
+                        <button type="button" class="soundOn" class="btn soundOn">
+                            <span class=" glyphicon glyphicon-volume-up"></span>
+                        </button>
+                    </li>
+                    <li>
+                        <button type="button" class="btn" id="reset-btn">RESET</button>
+                    </li>
+                </ul>
+            </header>
         </div>
-        <header>
-            <h1>Harry Potter Memory Match</h1>
-            <ul>
-                <li>
-                    <a href="#settings">Settings</a>
-                </li>
-                <li>
-                    <a href="about.html">About the Developer</a>
-                </li>
-                <li>
-                    <button type="button" class="soundOn" class="btn soundOn">
-                        <span class=" glyphicon glyphicon-volume-up pull-right"></span>
-                    </button>
-                </li>
-            </ul>
-        </header>
 
-        <div class="main-content">
+        <div class="main-content row col-md-12">
 
-            <div class="sidebar">
+            <div class="sidebar col-md-3">
+                <h4>STATS</h4>
+                <div class="stats">
+                    <div class="games-played">
+                        <p class="label">GAMES PLAYED:
+                            <span class='value'></span>
+                        </p>
+                    </div>
 
-                <div class="games-played">
-                    <h4>STATS</h4>
-                    <p class="label">GAMES PLAYED:
-                        <span class='value'></span>
-                    </p>
-                </div>
-                <div class="attempts">
-                    <p class="label ">NUMBER OF TRIES:
-                        <span class='value'></span>
-                    </p>
-                </div>
-                <div class="accuracy">
-                    <p class="label">ACCURACY:
-                        <span class='value'></span>
-                    </p>
-                </div>
-                <button type="button" class="btn" id="reset-btn">RESET</button>
-                <div class="game-info">
-                    <h4>GAME INFO</h4>
-                    <p class="label">LEVEL
-                        <span class='value'>ONE</span>
-                    </p>
-                </div>
-                <div class="stone">
-                    <img class="stone-img" src="images/stone-glow.png" alt="">
+                    <div class="attempts">
+                        <p class="label ">NUMBER OF TRIES:
+                            <span class='value'></span>
+                        </p>
+                    </div>
+                    <div class="accuracy">
+                        <p class="label">ACCURACY:
+                            <span class='value'></span>
+                        </p>
+                    </div>
+
+                    <div class="stone">
+                        <img class="stone-img" src="images/stone-glow.png" alt="">
+                    </div>
                 </div>
             </div>
-            <div class="gameboard custom" id="game-area">
+            <div class="col-md-9 gameboard custom" id="game-area">
 
                 <div class="card_container">
 
@@ -98,17 +92,17 @@
 
                 </div>
             </div>
-
-            <div class="container-fluid col-md-12 endModal modalShadow">
-                <div class="winModal">
-                    <div class="modalHeader">
-                        <h1 class="welcome">Congratulations</h1>
-                    </div>
-                    <div>
-                        <iframe width="650" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
+        </div>
+        <div class="container-fluid col-md-12 endModal modalShadow">
+            <div class="winModal">
+                <div class="modalHeader">
+                    <h1 class="welcome">Congratulations</h1>
+                </div>
+                <div>
+                    <iframe width="650" height="400" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
+        </div>
 
 
 </body>

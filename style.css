@@ -12,7 +12,6 @@ body {
     background-color: black;
     width: 100%;
     height: 100%;
-    /* overflow: hidden; */
 }
 
 h1 {
@@ -22,41 +21,41 @@ h1 {
     text-align: center;
 }
 
+.title {
+    font-family: harryp;
+    color: rgb(223, 190, 83);
+    font-size: 7vw;
+    text-align: center;
+}
+
 header {
     position: relative;
 }
 
-.Ravenclaw {
-    background-image: url("images/ravenclaw.png");
-    background-size: cover;
+.Ravenclaw,
+.Hufflepuff,
+.Gryffindor,
+.Slytherin {
     background-repeat: no-repeat;
     background-position: left 60px center;
-    background-size: 8%;
+    background-size: 110px;
     padding-top: 15px;
+}
+
+.Ravenclaw {
+    background-image: url("images/ravenclaw.png");
 }
 
 .Hufflepuff {
     background-image: url("images/hufflepuff.png");
-    background-repeat: no-repeat;
-    background-position: left 60px center;
-    background-size: 110px;
-    padding-top: 15px;
 }
 
 .Gryffindor {
     background-image: url("images/gryffindor.png");
-    background-repeat: no-repeat;
-    background-position: left 60px center;
-    background-size: 110px;
-    padding-top: 15px;
 }
 
 .Slytherin {
     background-image: url("images/slytherin.png");
-    background-repeat: no-repeat;
-    background-position: left 60px center;
-    background-size: 110px;
-    padding-top: 15px;
 }
 
 header ul {
@@ -94,10 +93,7 @@ li a:hover {
     color: rgb(223, 190, 83);
     text-align: center;
     display: inline-block;
-    width: 12vw;
-    height: 75vh;
     vertical-align: top;
-    margin-left: 25px;
 }
 
 h4 {
@@ -123,16 +119,13 @@ h4 {
 }
 
 #reset-btn {
-    margin-bottom: 25px;
-    background-color: rgb(80, 13, 22);
+   background-color: rgb(80, 13, 22);
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
 }
 
 .gameboard {
     display: inline-block;
-    width: 70vw;
-    height: 75vh;
     margin: 0 auto;
     text-align: center;
 }
@@ -144,8 +137,7 @@ h4 {
 
 .game-card {
     text-align: left;
-    height: 20vh;
-    width: 8vw;
+    width: 13%;
     display: inline-block;
     position: relative;
     margin: 1%;
@@ -265,6 +257,7 @@ h4 {
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
     font-size: 30px;
+    
 }
 
 .welcome,
@@ -308,29 +301,87 @@ h4 {
     height: 250px;
 }
 
-@media only screen and (max-width: 1385px) {
+@media only screen and (max-width: 996px) {
+    .sidebar {
+        display: block;
+    }
+
     .right-bar {
         display: none;
     }
+
+    .gameboard {
+        display: block;
+    }
+
+    .attempts,
+    .accuracy,
+    .games-played,
+    .stats {
+        display: inline-block;
+    }
+
+    .game-info {
+        display: inline-block;
+    }
+
+    .stone {
+        padding: 0;
+        display: none;
+    }
+
+    .game-card {
+        width: 18%;
+    }
+
+
+}
+@media only screen and (max-width: 425px) {
+    .title {
+        font-size: 34px;
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    .stats {
+        text-align: center;
+    }
+    .games-played,
+    .attempts,
+    .accuracy {
+        margin: 0;
+        padding: 0;
+    }
+    .card_container {
+        width: 100%;     
+    }
+
+    .game-card {
+        width: 48%;
+    }
+
+    .Ravenclaw,
+    .Hufflepuff,
+    .Gryffindor,
+    .Slytherin {
+        background-position: left 10px bottom;
+        background-size: 18%;  
+    }
+    
+.btn-container {
+    margin: 0;
+    padding: 0;
+    padding-right: 10px;
+    
 }
 
-@media only screen and (max-width: 900px) {
-    .right-bar {
-        display: none;
-    }
-    .stone {
-        display: none;
-    }
-    .Ravenclaw {
-        display: none;
-    }
-    .Hufflepuff {
-        display: none;
-    }
-    .Gryffindor {
-        display: none;
-    }
-    .Slytherin {
-        display: none;
-    }
+.soundOn {
+height: 40px;
+
+}
+
+#reset-btn {
+    height: 40px;
+    margin-bottom: 19px;
+}
+    
 }
