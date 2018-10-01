@@ -38,7 +38,7 @@ header {
 .Slytherin {
     background-repeat: no-repeat;
     background-position: left 60px center;
-    background-size: 110px;
+    background-size: 10%;
     padding-top: 15px;
 }
 
@@ -87,6 +87,7 @@ li a:hover {
 
 .main-content {
     padding-top: 10px;
+    position: relative;
 }
 
 .sidebar {
@@ -98,6 +99,12 @@ li a:hover {
 
 h4 {
     font-weight: 700;
+}
+
+.stat-title {
+    font-family: harryp;
+    font-size: 30px;
+    margin-bottom: 25px;
 }
 
 .label {
@@ -122,6 +129,9 @@ h4 {
    background-color: rgb(80, 13, 22);
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
+    height: 40px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .gameboard {
@@ -181,7 +191,9 @@ h4 {
     z-index: 1;
 }
 
-/* non bootstrap modal */
+iframe {
+    width: 50vw;
+}
 
 .modalShadow {
     position: fixed;
@@ -200,7 +212,7 @@ h4 {
     background-color: white;
     background-image: url(images/hogwartsEmblem.png);
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: cover;
     background-position: center;
     color: black;
     text-align: center;
@@ -227,16 +239,15 @@ h4 {
 .mainModal h1 {
     color: black;
     text-shadow: rgb(223, 190, 83) 0px 0px 8px;
-    font-size: 100px;
+    font-size: 10vw;
 }
 
 .mainModal h2 {
     font-family: harryp;
-    font-size: 80px;
+    font-size: 7vw;
 }
 
 .modalFont {
-    font-size: 50px;
     color: #500d16;
     text-shadow: rgb(223, 190, 83) 0px 0px 8px;
 }
@@ -256,7 +267,18 @@ h4 {
     background-color: rgb(80, 13, 22);
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
+    height: 40px;
     font-size: 30px;
+    
+}
+
+.soundBtn {
+    background-color: rgb(80, 13, 22);
+    border: 2px solid rgb(223, 190, 83);
+    color: rgb(223, 190, 83);
+    height: 50px;
+    font-size: 30px;
+   
     
 }
 
@@ -271,7 +293,7 @@ h4 {
     background-color: rgb(80, 13, 22);
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
-    width: 12vw;
+    width: 200px;
     text-align: center;
     border-radius: 15px;
     font-size: 36px;
@@ -293,15 +315,42 @@ h4 {
 
 .right-bar {
     display: inline-block;
-    height: 100%;
-    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }
 
 .side {
-    height: 250px;
+    height: 325px;
+    vertical-align: bottom;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  
+    .game-card {
+        text-align: left;
+        width: 23%;
+        display: inline-block;
+        position: relative;
+        margin: 1%;
+    }
+
+    #reset-btn {
+        height: 30px;
+        margin-bottom: 12px;
+        padding-bottom: 25px;
+    }
+
+    .soundOn {
+        height: 30px;
+        font-size: 20px;
+        
+    }
 }
 
 @media only screen and (max-width: 996px) {
+
     .sidebar {
         display: block;
     }
@@ -333,9 +382,43 @@ h4 {
     .game-card {
         width: 18%;
     }
-
-
 }
+
+@media only screen and (max-width: 768px) {
+
+    .mainModal h1 {
+        color: black;
+        text-shadow: rgb(223, 190, 83) 0px 0px 8px;
+        font-size: 15vw;
+    }
+    
+    .mainModal h2 {
+        font-family: harryp;
+        font-size: 10vw;
+    }
+
+
+    .Ravenclaw,
+    .Hufflepuff,
+    .Gryffindor,
+    .Slytherin {
+        background-position: left 20px bottom;
+        background-size: 15%;  
+    }
+
+    .soundOn {
+        height: 35px;
+        font-size: 24px;
+        
+    }
+
+    #reset-btn {
+        height: 30px;
+        margin-bottom: 12px;
+        padding-bottom: 25px;
+    }
+}
+
 @media only screen and (max-width: 425px) {
     .title {
         font-size: 34px;
@@ -364,7 +447,7 @@ h4 {
     .Gryffindor,
     .Slytherin {
         background-position: left 10px bottom;
-        background-size: 18%;  
+        background-size: 15%;  
     }
     
 .btn-container {
@@ -375,13 +458,15 @@ h4 {
 }
 
 .soundOn {
-height: 40px;
+height: 30px;
+font-size: 20px;
 
 }
 
 #reset-btn {
-    height: 40px;
-    margin-bottom: 19px;
+    height: 30px;
+    margin-bottom: 12px;
+    padding-bottom: 25px;
 }
     
 }
