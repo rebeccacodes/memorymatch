@@ -4,7 +4,7 @@ function startUp() {
     shuffleImageArray(imagesLevelOne);
     create_gameboard(imagesLevelOne);
     display_stats();
-    $('.a').removeClass('hide');
+    $('.snitch').removeClass('hide');
     activateClickHandlers();
 }
 
@@ -19,7 +19,8 @@ function pickHouse() {
     return x;
 }
 
-var imagesLevelOne = ['images/youngHarry.jpg', 'images/voldemort.png', 'images/snape.jpg', 'images/ronWeasley.jpg', 'images/quirinus-quirrel.jpg', 'images/malfoy.jpg', 'images/hermione.jpg', 'images/hagrid.jpg', 'images/albus_dumbledore.jpg', 'images/youngHarry.jpg', 'images/voldemort.png', 'images/snape.jpg', 'images/ronWeasley.jpg', 'images/quirinus-quirrel.jpg', 'images/malfoy.jpg', 'images/hermione.jpg', 'images/hagrid.jpg', 'images/albus_dumbledore.jpg'];
+var imageArray = ['images/youngHarry.jpg', 'images/voldemort.png', 'images/snape.jpg', 'images/ronWeasley.jpg', 'images/quirinus-quirrel.jpg', 'images/malfoy.jpg', 'images/hermione.jpg', 'images/hagrid.jpg', 'images/albus_dumbledore.jpg'];
+var imagesLevelOne = imageArray.concat(imageArray);
 var first_card_clicked = null;
 var second_card_clicked = null;
 var total_possible_matches = 9;
@@ -34,13 +35,12 @@ function activateClickHandlers() {
     $('.game-card').click(card_clicked);
     $('#reset-btn').click(reset_game);
     $('#chooseHouse').click(pickHouse);
-    $('.a').click(removeSnitch);
+    $('.snitch').click(removeSnitch);
     $('.modalShadow').click(closeWinModal);
     $('.soundOn').click(function () { audioSwitch = 1 - audioSwitch });
 
 }
 function flip_card_back() {
-    console.log("flip_card_back function called");
     $(first_card_clicked).find('.back').removeClass('hide');
     $(second_card_clicked).find('.back').removeClass('hide');
     first_card_clicked = null;
@@ -124,11 +124,9 @@ function resetStats() {
 }
 
 function reset_game() {
-    console.log("reset button clicked");
     games_played++;
     resetStats();
     $('.game-card').find('.back').removeClass('hide');
-    console.log("games played: ", games_played);
     shuffleImageArray(imagesLevelOne);
     create_gameboard(imagesLevelOne);
     activateClickHandlers();
@@ -145,7 +143,6 @@ function create_gameboard(imageArray) {
         create_game_card.append(create_back);
 
         var create_front = $('<div>').addClass('front');
-        //$(<'img'>).attr('src', array[i])
         create_front.append($('<img src=' + '"' + imageArray[pictureIndex] + '"' + '>'));
         create_game_card.append(create_front);
 
@@ -185,10 +182,10 @@ function makeNewPosition() {
 
 function animateDiv() {
     var newq = makeNewPosition();
-    var oldq = $('.a').offset();
+    var oldq = $('.snitch').offset();
     var speed = calcSpeed([oldq.top, oldq.left], newq);
 
-    $('.a').animate({ top: newq[0], left: newq[1] }, speed, function () {
+    $('.snitch').animate({ top: newq[0], left: newq[1] }, speed, function () {
         animateDiv();
     });
 }
@@ -206,8 +203,7 @@ function calcSpeed(prev, next) {
 }
 
 function removeSnitch() {
-    console.log('snitch clicked');
-    $('.a').addClass('hide');
+    $('.snitch').addClass('hide');
 }
 
 var sounds = {
