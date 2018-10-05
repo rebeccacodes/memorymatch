@@ -239,12 +239,12 @@ iframe {
 .mainModal h1 {
     color: black;
     text-shadow: rgb(223, 190, 83) 0px 0px 8px;
-    font-size: 10vw;
+    font-size: 8vw;
 }
 
 .mainModal h2 {
     font-family: harryp;
-    font-size: 7vw;
+    font-size: 6vw;
 }
 
 .modalFont {
