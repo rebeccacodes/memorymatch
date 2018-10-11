@@ -187,12 +187,14 @@ h4 {
     width: 500px;
     height: 262px;
     background-image: url(images/snitchTransGif.gif);
-    position: fixed;
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: 1;
 }
 
 iframe {
-    width: 50vw;
+    width: 75%;
 }
 
 .modalShadow {
@@ -206,7 +208,7 @@ iframe {
 }
 
 .mainModal {
-    height: 75%;
+    min-height: 75%;
     width: 75%;
     position: fixed;
     background-color: white;
@@ -322,45 +324,27 @@ iframe {
 
 .side {
     height: 325px;
-    vertical-align: bottom;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    
 }
 
 @media only screen and (max-width: 1024px) {
-
-  
+   
     .game-card {
-        text-align: left;
-        width: 23%;
-        display: inline-block;
-        position: relative;
+        width: 20%;
         margin: 1%;
     }
 
-    #reset-btn {
-        height: 30px;
-        margin-bottom: 12px;
-        padding-bottom: 25px;
-    }
-
-    .soundOn {
-        height: 30px;
-        font-size: 20px;
-        
-    }
-}
-
-@media only screen and (max-width: 996px) {
-
     .sidebar {
         display: block;
-    }
-
-    .right-bar {
-        display: none;
+        width: 100%;
     }
 
     .gameboard {
         display: block;
+        width: 85%;
     }
 
     .attempts,
@@ -374,13 +358,44 @@ iframe {
         display: inline-block;
     }
 
-    .stone {
-        padding: 0;
+    #reset-btn {
+        height: 30px;
+        margin-bottom: 12px;
+        padding-bottom: 25px;
+    }
+
+    .soundOn {
+        height: 30px;
+        font-size: 20px;
+        
+    }
+
+    .right-bar {
         display: none;
     }
 
-    .game-card {
-        width: 18%;
+    
+    .attempts,
+    .accuracy,
+    .games-played,
+    .stats {
+        display: inline-block;
+    }
+
+    .game-info {
+        display: inline-block;
+    }
+
+    .stats {
+        text-align: center;
+    }
+
+    .stone {
+        display: none;
+    }
+
+    #game-area {
+        width: 100%;
     }
 }
 
@@ -417,7 +432,254 @@ iframe {
         margin-bottom: 12px;
         padding-bottom: 25px;
     }
+
+    .game-card {
+        width: 18%;
+        
+    }
 }
+
+/* Landscape ipad*/
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (orientation: landscape) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+    .game-card {
+        width: 13%;
+        margin: 1%;
+    }
+
+}
+
+/* Landscape iphone x */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+    header ul {
+        border-bottom: 0;
+    }
+
+     .Ravenclaw,
+     .Hufflepuff,
+     .Gryffindor,
+     .Slytherin {
+        background-position: left 30px top 10px;
+        background-size: 5%;
+     }
+
+     .title {
+        font-size: 36px;
+        margin: 0 auto;
+        
+    }
+    .stats {
+        text-align: center;
+    }
+
+     .game-card {
+        width: 9%;
+        
+    }
+
+    .btn-container {
+        margin: 0;
+        float: right;
+        padding: 0;
+        padding-right: 10px;
+        
+    }
+
+    .stat-title {
+        display: none;
+    }
+
+    .mainModal {
+        height: 300px;
+        width: 75%;
+    }
+
+    .hat {
+        display: none;
+    }
+
+     
+
+}
+
+
+/* Landscape iphone +*/
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+
+    
+    .game-card {
+        width: 13%;
+        margin: .5% 1% 1% .5%;
+    }
+
+    .games-played,
+    .attempts,
+    .accuracy {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+    .btn-container {
+        margin: 0;
+        padding: 0;
+        padding-right: 10px;
+        
+    }
+
+    .title {
+        font-size: 40px;
+        margin-bottom: 0px;
+    }
+
+    #reset-btn {
+        height: 24px;
+        margin-top: 0;
+        margin-bottom: 0px;
+        padding-bottom: 22px;
+        vertical-align: bottom;
+    }
+
+    .soundOn {
+        height: 30px;
+        font-size: 20px;
+        
+        }
+  
+}
+
+/* Landscape iphone 6 7 8 */
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) { 
+
+    header ul {
+        border-bottom: 0;
+    }
+
+    .title {
+        font-size: 34px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .Ravenclaw,
+    .Hufflepuff,
+    .Gryffindor,
+    .Slytherin {
+       background-position: left 30px top 10px;
+       background-size: 8%;
+    }
+    .game-card {
+        width: 13%;
+        margin: .5% 1% 1% .5%;
+    }
+
+    .games-played,
+    .attempts,
+    .accuracy {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+    .btn-container {
+        margin: 0;
+        padding: 0;
+        padding-right: 10px;
+        
+    }
+
+    .title {
+        font-size: 40px;
+        margin-bottom: 0px;
+    }
+
+    #reset-btn {
+        height: 24px;
+        margin-top: 0;
+        margin-bottom: 0px;
+        padding-bottom: 22px;
+        vertical-align: bottom;
+    }
+
+    .soundOn {
+        height: 30px;
+        font-size: 20px;
+        
+    }
+
+    .stat-title {
+        display: none;
+    }
+  
+}
+
+/* Landscape iphone 5*/
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: landscape) {
+
+    #reset-btn {
+        height: 24px;
+        margin-top: 0;
+        margin-bottom: 0px;
+        padding-bottom: 22px;
+        vertical-align: bottom;
+    }
+
+    .soundOn {
+        height: 30px;
+        font-size: 20px;
+        
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .title {
+        font-size: 30px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+}
+
+
 
 @media only screen and (max-width: 425px) {
     .title {
@@ -427,6 +689,10 @@ iframe {
     }
     .stats {
         text-align: center;
+    }
+
+    .stat-title {
+       display: none;
     }
     .games-played,
     .attempts,
@@ -439,7 +705,7 @@ iframe {
     }
 
     .game-card {
-        width: 48%;
+        width: 20%;
     }
 
     .Ravenclaw,
@@ -469,4 +735,16 @@ font-size: 20px;
     padding-bottom: 25px;
 }
     
+}
+
+/* Portrait */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2)
+  and (orientation: portrait) {
+
+    .game-card {
+        width: 18%;
+    }
 }
