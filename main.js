@@ -4,7 +4,6 @@ function startUp() {
     shuffleImageArray(imagesLevelOne);
     create_gameboard(imagesLevelOne);
     display_stats();
-    $('.snitch').removeClass('hide');
     activateClickHandlers();
 }
 
@@ -35,7 +34,6 @@ function activateClickHandlers() {
     $('.game-card').click(card_clicked);
     $('#reset-btn').click(reset_game);
     $('#chooseHouse').click(pickHouse);
-    $('.snitch').click(removeSnitch);
     $('.modalShadow').click(closeWinModal);
     $('.soundOn').click(function () { audioSwitch = 1 - audioSwitch });
 
@@ -47,7 +45,6 @@ function flip_card_back() {
     second_card_clicked = null;
 }
 function card_clicked() {
-    animateDiv();
     if ($(this).find('.back').hasClass('hide')) {
         return;
     }
@@ -167,43 +164,6 @@ function displayModal() {
 function closeWinModal() {
     $('.endModal.modalShadow.showModal').removeClass('showModal');
     $('iframe').attr('src', "");
-}
-
-function makeNewPosition() {
-    // Get viewport dimensions (remove the dimension of the div)
-    var h = $(window).height() - 263;
-    var w = $(window).width() - 500;
-
-    var nh = Math.floor(Math.random() * h);
-    var nw = Math.floor(Math.random() * w);
-
-    return [nh, nw];
-}
-
-function animateDiv() {
-    var newq = makeNewPosition();
-    var oldq = $('.snitch').offset();
-    var speed = calcSpeed([oldq.top, oldq.left], newq);
-
-    $('.snitch').animate({ top: newq[0], left: newq[1] }, speed, function () {
-        animateDiv();
-    });
-}
-
-function calcSpeed(prev, next) {
-
-    var x = Math.abs(prev[1] - next[1]);
-    var y = Math.abs(prev[0] - next[0]);
-
-    var greatest = x > y ? x : y;
-    var speedModifier = .8;
-    var speed = Math.ceil(greatest / speedModifier);
-
-    return speed;
-}
-
-function removeSnitch() {
-    $('.snitch').addClass('hide');
 }
 
 var sounds = {
