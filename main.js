@@ -22,7 +22,7 @@ var imageArray = ['images/youngHarry.jpg', 'images/voldemort.png', 'images/snape
 var imagesLevelOne = imageArray.concat(imageArray);
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 9;
+var total_possible_matches = 1;
 var match_counter = 0;
 var matches = 0;
 var attempts = 0;
@@ -34,8 +34,9 @@ function activateClickHandlers() {
     $('.game-card').click(card_clicked);
     $('#reset-btn').click(reset_game);
     $('#chooseHouse').click(pickHouse);
-    $('.modalShadow').click(closeWinModal);
+    //$('.modalShadow').click(closeWinModal);
     $('.soundOn').click(function () { audioSwitch = 1 - audioSwitch });
+    $('#reset-modal').click(reset_game);
 
 }
 function flip_card_back() {
