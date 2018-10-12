@@ -201,7 +201,7 @@ h4 {
     position: absolute;
     left: 0;
     top: 0;
-    z-index: 1;
+    
 }
 
 .modalShadow {
@@ -462,6 +462,10 @@ iframe {
 }
 
 @media only screen and (max-height: 420px) {
+
+    .snitch {
+        display: none;
+    }
 
     .mainModal {
         height: 85%;
