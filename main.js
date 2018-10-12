@@ -36,6 +36,7 @@ function activateClickHandlers() {
     $('#chooseHouse').click(pickHouse);
     $('.modalShadow').click(closeWinModal);
     $('.soundOn').click(function () { audioSwitch = 1 - audioSwitch });
+    $('#soundModal').click(function () { audioSwitch = 1 - audioSwitch });
     $('#reset-modal').click(reset_game);
 
 }
@@ -218,6 +219,7 @@ var sounds = {
 }
 
 function playSound(sound) {
+    console.log('sound played');
     var audio = new Audio(sounds[sound].url);
     if (audioSwitch === 1) {
         audio.play(sound);
