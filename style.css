@@ -134,6 +134,17 @@ h4 {
     padding-bottom: 20px;
 }
 
+#reset-modal {
+    background-color: rgb(80, 13, 22);
+     border: 2px solid rgb(223, 190, 83);
+     color: rgb(223, 190, 83);
+     height: 40px;
+     margin-bottom: 20px;
+     padding-bottom: 20px;
+ }
+
+
+
 .gameboard {
     display: inline-block;
     margin: 0 auto;
@@ -193,10 +204,6 @@ h4 {
     z-index: 1;
 }
 
-iframe {
-    width: 75%;
-}
-
 .modalShadow {
     position: fixed;
     left: 0;
@@ -238,6 +245,12 @@ iframe {
     transform: translate(-50%, -50%);
 }
 
+.win {
+    color: white;
+    font-family: harryp;
+    font-size: 30px;
+}
+
 .mainModal h1 {
     color: black;
     text-shadow: rgb(223, 190, 83) 0px 0px 8px;
@@ -249,9 +262,8 @@ iframe {
     font-size: 6vw;
 }
 
-.modalFont {
-    color: #500d16;
-    text-shadow: rgb(223, 190, 83) 0px 0px 8px;
+.welcome {
+    font-size: 8vw;
 }
 
 .openModal.modalShadow.showModal,
@@ -330,6 +342,11 @@ iframe {
     
 }
 
+iframe {
+    width: 650px;
+    height: 400px;
+}
+
 @media only screen and (max-width: 1024px) {
    
     .game-card {
@@ -401,6 +418,10 @@ iframe {
 
 @media only screen and (max-width: 768px) {
 
+    iframe {
+        width: 400px;
+    }
+
     .mainModal h1 {
         color: black;
         text-shadow: rgb(223, 190, 83) 0px 0px 8px;
@@ -439,6 +460,40 @@ iframe {
     }
 }
 
+@media only screen and (max-height: 400px) {
+
+    .mainModal {
+        height: 85%;
+    }
+
+    .mainModal h1 {
+    font-size: 10vw;
+    }
+
+    .mainModal h2 {
+        font-size: 8vw;
+        }
+    
+    .hat {
+        display: none;
+    }
+
+    .soundBtn {
+        height: 30px;
+        font-size: 15px;
+        
+    }
+
+    #chooseHouse {
+        margin-top: 0;
+        width: 100px;
+        font-size: 24px;
+        font-family: harryp;
+    }
+
+   
+}
+
 /* Landscape ipad*/
 @media only screen 
   and (min-device-width: 768px) 
@@ -458,6 +513,12 @@ iframe {
   and (max-device-width: 812px) 
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) { 
+
+       
+    iframe {
+        display: none;
+    }
+
 
     header ul {
         border-bottom: 0;
@@ -518,6 +579,10 @@ iframe {
   and (-webkit-min-device-pixel-ratio: 3)
   and (orientation: landscape) { 
 
+    iframe {
+        display: none;
+    }
+
     
     .game-card {
         width: 13%;
@@ -568,6 +633,164 @@ iframe {
         }
   
 }
+/* Landscape pixel2*/
+@media only screen 
+  and (min-device-width: 411px) 
+  and (max-device-width: 731px) 
+  and (orientation: landscape) { 
+    iframe {
+        display: none;
+    }
+
+    header ul {
+        border-bottom: 0;
+    }
+
+    .title {
+        font-size: 34px;
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .Ravenclaw,
+    .Hufflepuff,
+    .Gryffindor,
+    .Slytherin {
+       background-position: left 30px top 10px;
+       background-size: 8%;
+    }
+    .game-card {
+        width: 13%;
+        margin: .5% 1% 1% .5%;
+    }
+
+    .games-played,
+    .attempts,
+    .accuracy {
+        margin: 0;
+        padding: 0;
+        
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding-top: 0px;
+        margin-top: 0px;
+    }
+
+    .btn-container {
+        margin: 0;
+        padding: 0;
+        padding-right: 10px;
+        
+    }
+
+    .title {
+        font-size: 40px;
+        margin-bottom: 0px;
+    }
+
+    #reset-btn {
+        height: 24px;
+        margin-top: 0;
+        margin-bottom: 0px;
+        padding-bottom: 22px;
+        vertical-align: bottom;
+    }
+
+    .soundOn {
+        height: 30px;
+        font-size: 20px;
+        
+    }
+
+    .stat-title {
+        display: none;
+    }
+  }
+
+  /* Landscape pixel2 xl*/
+@media only screen 
+and (min-device-width: 411px) 
+and (max-device-width: 823px) 
+and (orientation: landscape) { 
+  iframe {
+      display: none;
+  }
+
+  header ul {
+      border-bottom: 0;
+  }
+
+  .title {
+      font-size: 34px;
+      margin-top: 0;
+      margin-bottom: 0;
+  }
+
+  .Ravenclaw,
+  .Hufflepuff,
+  .Gryffindor,
+  .Slytherin {
+     background-position: left 30px top 10px;
+     background-size: 8%;
+  }
+  .game-card {
+      width: 13%;
+      margin: .5% 1% 1% .5%;
+  }
+
+  .games-played,
+  .attempts,
+  .accuracy {
+      margin: 0;
+      padding: 0;
+      
+  }
+
+  .label {
+      font-size: 12px;
+  }
+
+  .main-content {
+      padding-top: 0px;
+      margin-top: 0px;
+  }
+
+  .btn-container {
+      margin: 0;
+      padding: 0;
+      padding-right: 10px;
+      
+  }
+
+  .title {
+      font-size: 40px;
+      margin-bottom: 0px;
+  }
+
+  #reset-btn {
+      height: 24px;
+      margin-top: 0;
+      margin-bottom: 0px;
+      padding-bottom: 22px;
+      vertical-align: bottom;
+  }
+
+  .soundOn {
+      height: 30px;
+      font-size: 20px;
+      
+  }
+
+  .stat-title {
+      display: none;
+  }
+}
+
 
 /* Landscape iphone 6 7 8 */
 @media only screen 
@@ -575,6 +798,10 @@ iframe {
   and (max-device-width: 667px) 
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) { 
+
+    iframe {
+        display: none;
+    }
 
     header ul {
         border-bottom: 0;
@@ -654,6 +881,10 @@ iframe {
   and (-webkit-min-device-pixel-ratio: 2)
   and (orientation: landscape) {
 
+    iframe {
+        display: none;
+    }
+
     #reset-btn {
         height: 24px;
         margin-top: 0;
@@ -682,6 +913,18 @@ iframe {
 
 
 @media only screen and (max-width: 425px) {
+
+    .win {
+        padding: 30px;
+    }
+
+    .winModal {
+        height: 300px;
+    }
+
+    iframe {
+        display: none;
+    }
     .title {
         font-size: 34px;
         margin-top: 0;
@@ -737,14 +980,36 @@ font-size: 20px;
     
 }
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 480px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
 
-    .game-card {
-        width: 18%;
+/* Portrait iphone x*/
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+
+  .game-card {
+        width: 25%;
     }
+}
+
+/* Portrait galaxy 5*/
+@media only screen 
+  and (min-device-width: 360px) 
+  and (max-device-width: 640px) 
+  and (orientation: portrait) { 
+
+#game-area {
+    padding: 0;
+    margin: 0;
+}
+
+  .game-card {
+        width: 22%;
+    }
+
+    .label {
+        font-size: 12px;
+    }
+
 }
