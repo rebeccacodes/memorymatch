@@ -4,7 +4,7 @@
 }
 
 .custom {
-    cursor: url(images/wand3.png), auto;
+    cursor: url(images/wand3.png) 29 0, auto;
 }
 
 body {
@@ -32,10 +32,22 @@ header {
     position: relative;
 }
 
+.header {
+    display: none;
+}
+
+.placeholder {
+    background-repeat: no-repeat;
+    background-position: left 60px center;
+    background-size: 10%;
+    padding-top: 15px;
+}
+
 .Ravenclaw,
 .Hufflepuff,
 .Gryffindor,
-.Slytherin {
+.Slytherin,
+.placeholder {
     background-repeat: no-repeat;
     background-position: left 60px center;
     background-size: 10%;
@@ -125,22 +137,26 @@ h4 {
     padding-bottom: 25px;
 }
 
-#reset-btn {
+#reset-btn, #soundOn {
    background-color: rgb(80, 13, 22);
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
-    height: 40px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
+    margin: 0 10px 10px 0;
+    font-size: 20px;
+ 
 }
+
+#soundOn {
+    width: 50px;
+}
+
 
 #reset-modal {
     background-color: rgb(80, 13, 22);
      border: 2px solid rgb(223, 190, 83);
      color: rgb(223, 190, 83);
-     height: 40px;
-     margin-bottom: 20px;
-     padding-bottom: 20px;
+     
+   
  }
 
 
@@ -169,6 +185,25 @@ h4 {
     position: absolute;
     height: 100%;
     width: 100%;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.back:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite; 
 }
 
 .front {
@@ -232,7 +267,7 @@ h4 {
 }
 
 .winModal {
-    min-height: 75%;
+    height: 90%;
     width: 75%;
     position: fixed;
     background-color: black;
@@ -267,6 +302,11 @@ h4 {
     font-size: 6vw;
 }
 
+.congrats {
+    font-size: 8vw;
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .openModal.modalShadow.showModal,
 .endModal.modalShadow.showModal {
     display: block;
@@ -278,23 +318,22 @@ h4 {
     text-align: right;
 }
 
-.soundOn {
-    background-color: rgb(80, 13, 22);
-    border: 2px solid rgb(223, 190, 83);
-    color: rgb(223, 190, 83);
-    height: 40px;
-    font-size: 30px;
-    
-}
 
 .soundBtn {
     background-color: rgb(80, 13, 22);
     border: 2px solid rgb(223, 190, 83);
     color: rgb(223, 190, 83);
-    height: 50px;
-    font-size: 30px;
-   
+    width: 60px;
+    font-size: 30px;  
     
+}
+
+.btn:hover {
+    color: rgb(223, 190, 83);
+}
+
+.btn:focus {
+    color: rgb(223, 190, 83);
 }
 
 .welcome,
@@ -344,8 +383,8 @@ h4 {
 }
 
 iframe {
-    width: 650px;
-    height: 400px;
+    width: 625px;
+    height: 375px;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -374,18 +413,6 @@ iframe {
 
     .game-info {
         display: inline-block;
-    }
-
-    #reset-btn {
-        height: 30px;
-        margin-bottom: 12px;
-        padding-bottom: 25px;
-    }
-
-    .soundOn {
-        height: 30px;
-        font-size: 20px;
-        
     }
 
     .right-bar {
@@ -417,10 +444,17 @@ iframe {
     }
 }
 
+@media only screen and (max-width: 860px) {
+    iframe {
+        width: 500px;
+    }
+
+}
+
 @media only screen and (max-width: 768px) {
 
     iframe {
-        width: 400px;
+        width: 325px;
     }
 
     .mainModal h1 {
@@ -438,21 +472,10 @@ iframe {
     .Ravenclaw,
     .Hufflepuff,
     .Gryffindor,
-    .Slytherin {
+    .Slytherin,
+    .placeholder {
         background-position: left 20px bottom;
         background-size: 15%;  
-    }
-
-    .soundOn {
-        height: 35px;
-        font-size: 24px;
-        
-    }
-
-    #reset-btn {
-        height: 30px;
-        margin-bottom: 12px;
-        padding-bottom: 25px;
     }
 
     .game-card {
@@ -483,13 +506,7 @@ iframe {
         display: none;
     }
 
-    .soundBtn {
-        height: 30px;
-        font-size: 15px;
-        
-    }
-
-    #chooseHouse {
+  #chooseHouse {
         margin-top: 0;
         width: 100px;
         font-size: 24px;
@@ -524,6 +541,21 @@ iframe {
         display: none;
     }
 
+    header {
+        display: none;
+    }
+
+    .header {
+        display: block;
+        text-align: center;
+    }
+
+    .title {
+        display: inline-block;
+        padding-right: 25px;
+        
+    }
+
 
     header ul {
         border-bottom: 0;
@@ -532,7 +564,8 @@ iframe {
      .Ravenclaw,
      .Hufflepuff,
      .Gryffindor,
-     .Slytherin {
+     .Slytherin,
+     .placeholder {
         background-position: left 30px top 10px;
         background-size: 5%;
      }
@@ -570,6 +603,14 @@ iframe {
 
     .hat {
         display: none;
+    }
+
+    .mainModal h1 {
+        font-size: 7vw;
+    }
+
+    .mainModal h2 {
+        font-size: 5vw;
     }
 
      
@@ -623,19 +664,14 @@ iframe {
         margin-bottom: 0px;
     }
 
-    #reset-btn {
-        height: 24px;
-        margin-top: 0;
-        margin-bottom: 0px;
-        padding-bottom: 22px;
-        vertical-align: bottom;
+    .congrats {
+        font-size: 12vw;
+        margin: 20px;
     }
-
-    .soundOn {
-        height: 30px;
-        font-size: 20px;
-        
-        }
+    
+    .win {
+       margin: 20px;
+    }
   
 }
 /* Landscape pixel2*/
@@ -660,7 +696,8 @@ iframe {
     .Ravenclaw,
     .Hufflepuff,
     .Gryffindor,
-    .Slytherin {
+    .Slytherin,
+    .placeholder {
        background-position: left 30px top 10px;
        background-size: 8%;
     }
@@ -698,20 +735,6 @@ iframe {
         margin-bottom: 0px;
     }
 
-    #reset-btn {
-        height: 24px;
-        margin-top: 0;
-        margin-bottom: 0px;
-        padding-bottom: 22px;
-        vertical-align: bottom;
-    }
-
-    .soundOn {
-        height: 30px;
-        font-size: 20px;
-        
-    }
-
     .stat-title {
         display: none;
     }
@@ -739,7 +762,8 @@ and (orientation: landscape) {
   .Ravenclaw,
   .Hufflepuff,
   .Gryffindor,
-  .Slytherin {
+  .Slytherin,
+  .placeholder {
      background-position: left 30px top 10px;
      background-size: 8%;
   }
@@ -777,20 +801,6 @@ and (orientation: landscape) {
       margin-bottom: 0px;
   }
 
-  #reset-btn {
-      height: 24px;
-      margin-top: 0;
-      margin-bottom: 0px;
-      padding-bottom: 22px;
-      vertical-align: bottom;
-  }
-
-  .soundOn {
-      height: 30px;
-      font-size: 20px;
-      
-  }
-
   .stat-title {
       display: none;
   }
@@ -821,7 +831,8 @@ and (orientation: landscape) {
     .Ravenclaw,
     .Hufflepuff,
     .Gryffindor,
-    .Slytherin {
+    .Slytherin,
+    .placeholder {
        background-position: left 30px top 10px;
        background-size: 8%;
     }
@@ -859,22 +870,17 @@ and (orientation: landscape) {
         margin-bottom: 0px;
     }
 
-    #reset-btn {
-        height: 24px;
-        margin-top: 0;
-        margin-bottom: 0px;
-        padding-bottom: 22px;
-        vertical-align: bottom;
-    }
-
-    .soundOn {
-        height: 30px;
-        font-size: 20px;
-        
-    }
-
     .stat-title {
         display: none;
+    }
+
+    .congrats {
+        font-size: 12vw;
+        margin: 20px;
+    }
+    
+    .win {
+       margin: 20px;
     }
   
 }
@@ -890,19 +896,6 @@ and (orientation: landscape) {
         display: none;
     }
 
-    #reset-btn {
-        height: 24px;
-        margin-top: 0;
-        margin-bottom: 0px;
-        padding-bottom: 22px;
-        vertical-align: bottom;
-    }
-
-    .soundOn {
-        height: 30px;
-        font-size: 20px;
-        
-    }
 
     .label {
         font-size: 12px;
@@ -915,6 +908,59 @@ and (orientation: landscape) {
     }
 }
 
+@media only screen 
+  and (min-device-width: 823px) 
+  and (max-device-width: 823px) 
+  
+  and (orientation: landscape) { 
+
+    .congrats {
+        font-size: 12vw;
+        margin: 20px;
+    }
+    
+    .win {
+       margin: 20px;
+    }
+    }
+
+@media only screen 
+  and (min-device-width: 731px) 
+  and (max-device-width: 731px) 
+  
+  and (orientation: landscape) { 
+
+    .congrats {
+        font-size: 12vw;
+        margin: 20px;
+    }
+    
+    .win {
+        padding: 20px;
+        margin: 20px;
+    }
+  }
+
+
+@media only screen and (max-width: 640px) {
+    .congrats {
+        font-size: 12vw;
+    }
+    
+    .win {
+        padding: 20px;
+    }
+    }
+
+@media only screen and (max-width: 480px) {
+.congrats {
+    font-size: 12vw;
+}
+
+.win {
+    padding: 20px;
+}
+}
 
 
 @media only screen and (max-width: 425px) {
@@ -924,7 +970,7 @@ and (orientation: landscape) {
     }
 
     .winModal {
-        height: 300px;
+        height: 50%;
     }
 
     iframe {
@@ -959,7 +1005,8 @@ and (orientation: landscape) {
     .Ravenclaw,
     .Hufflepuff,
     .Gryffindor,
-    .Slytherin {
+    .Slytherin,
+    .placeholder {
         background-position: left 10px bottom;
         background-size: 15%;  
     }
@@ -971,18 +1018,9 @@ and (orientation: landscape) {
         
     }
 
-    .soundOn {
-    height: 30px;
-    font-size: 20px;
-
+    .snitch {
+        display: none;
     }
-
-    #reset-btn {
-        height: 30px;
-        margin-bottom: 12px;
-        padding-bottom: 25px;
-    }
-    
 }
 
 
@@ -1017,4 +1055,11 @@ and (orientation: landscape) {
         font-size: 12px;
     }
 
+}
+
+@media only screen and (max-width: 320px) {
+
+    .winModal {
+        height: 60%;
+    }
 }

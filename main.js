@@ -18,6 +18,20 @@ function pickHouse() {
     return x;
 }
 
+function changeSoundIcon() {
+    audioSwitch = 1 - audioSwitch;
+
+    if (audioSwitch === 0) {
+        $('.fa').removeClass('fa-volume-up');
+        $('.fa').addClass('fa-volume-off');
+
+    } else if (audioSwitch === 1) {
+
+        $('.fa').removeClass('fa-volume-off');
+        $('.fa').addClass('fa-volume-up');
+    }
+}
+
 var imageArray = ['images/youngHarry.jpg', 'images/voldemort.png', 'images/snape.jpg', 'images/ronWeasley.jpg', 'images/quirinus-quirrel.jpg', 'images/malfoy.jpg', 'images/hermione.jpg', 'images/hagrid.jpg', 'images/albus_dumbledore.jpg'];
 var imagesLevelOne = imageArray.concat(imageArray);
 var first_card_clicked = null;
@@ -35,8 +49,8 @@ function activateClickHandlers() {
     $('#reset-btn').click(reset_game);
     $('#chooseHouse').click(pickHouse);
     $('.modalShadow').click(closeWinModal);
-    $('.soundOn').click(function () { audioSwitch = 1 - audioSwitch });
-    $('#soundModal').click(function () { audioSwitch = 1 - audioSwitch });
+    $('#soundOn').click(changeSoundIcon);
+    $('#soundModal').click(changeSoundIcon);
     $('#reset-modal').click(reset_game);
 
 }
@@ -124,6 +138,8 @@ function resetStats() {
 
 function reset_game() {
     games_played++;
+    first_card_clicked = null;
+    second_card_clicked = null;
     resetStats();
     $('.game-card').find('.back').removeClass('hide');
     shuffleImageArray(imagesLevelOne);
@@ -223,6 +239,7 @@ function playSound(sound) {
     var audio = new Audio(sounds[sound].url);
     if (audioSwitch === 1) {
         audio.play(sound);
+
     }
 }
 
