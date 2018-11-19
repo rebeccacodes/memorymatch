@@ -7,9 +7,10 @@
 
     <title>Harry Potter Memory Match</title>
 
-    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="main.js"></script>
 
@@ -19,21 +20,29 @@
     <div class="container-fluid col-md-12">
 
         <div class="row">
-            <header>
+            <header class="placeholder">
                 <h1 class="title">Harry Potter Memory Match</h1>
                 <ul class="btn-container">
                     <li>
-                        <button type="button" class="soundOn" class="btn soundOn">
-                            <span class=" glyphicon glyphicon-volume-up"></span>
+                        <button type="button" class="btn" id="soundOn">
+                            <i class="fa fa-volume-off"></i>
+
                         </button>
                     </li>
                     <li>
-                        <button type="button" class="btn" id="reset-btn">RESET</button>
+                        <button type="button" class="btn" id="reset-btn"><i class="fa fa-undo"></i></button>
                     </li>
                 </ul>
             </header>
         </div>
+        <div class="header">
+            <h1 class="title">Harry Potter Memory Match</h1>
+            <button type="button" class="btn" id="soundOn">
+                <i class="fa fa-volume-off"></i>
+                <button type="button" class="btn" id="reset-btn"><i class="fa fa-undo"></i></button>
 
+            </button>
+        </div>
         <div class="main-content row col-md-12">
 
             <div class="sidebar col-md-2">
@@ -77,7 +86,7 @@
                 <div class="mainModal">
                     <div class="modalHeader">
                         <button type="button" class="btn soundBtn" id="soundModal">
-                            <span class=" glyphicon glyphicon-volume-up pull-right"></span>
+                            <i class="fa fa-volume-off" aria-hidden="true"></i>
                         </button>
                     </div>
                     <div class='snitch'></div>
@@ -96,7 +105,7 @@
         <div class="container-fluid col-md-12 endModal modalShadow">
             <div class="winModal">
                 <div class="modalHeader">
-                    <h1 class="welcome">Congratulations</h1>
+                    <h1 class="congrats">Congratulations</h1>
                 </div>
                 <div class="win">You Matched Them All!</div>
                 <div>
