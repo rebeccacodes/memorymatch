@@ -515,6 +515,30 @@ iframe {
 
    
 }
+@media only screen 
+  and (max-height: 650px) {
+    iframe {
+        display: none;
+    }
+
+    .congrats, .win {
+        margin: 20px;
+        padding: 20px;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .title {
+       font-size: 80px;
+    }
+
+    .Ravenclaw, .Hufflepuff, .Gryffindor, .Slytherin, .placeholder {
+      
+        background-size: 125px;
+       
+    }
+  }
+
 
 /* Landscape ipad*/
 @media only screen 
