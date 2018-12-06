@@ -235,7 +235,6 @@ var sounds = {
 }
 
 function playSound(sound) {
-    console.log('sound played');
     var audio = new Audio(sounds[sound].url);
     if (audioSwitch === 1) {
         audio.play(sound);
