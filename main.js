@@ -36,7 +36,7 @@ var imageArray = ['images/youngHarry.jpg', 'images/voldemort.png', 'images/snape
 var imagesLevelOne = imageArray.concat(imageArray);
 var first_card_clicked = null;
 var second_card_clicked = null;
-var total_possible_matches = 9;
+var total_possible_matches = 1;
 var match_counter = 0;
 var matches = 0;
 var attempts = 0;
@@ -235,7 +235,6 @@ var sounds = {
 }
 
 function playSound(sound) {
-    console.log('sound played');
     var audio = new Audio(sounds[sound].url);
     if (audioSwitch === 1) {
         audio.play(sound);

@@ -451,6 +451,14 @@ iframe {
 
 }
 
+@media only screen and (max-height: 725px) {
+
+
+    iframe {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 768px) {
 
     iframe {
